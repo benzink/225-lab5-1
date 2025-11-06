@@ -1,7 +1,6 @@
-from main import app
+import requests
 
 def test_home_page():
-    client = app.test_client()
-    response = client.get('/')
+    response = requests.get("http://localhost:5000")
     assert response.status_code == 200
-    assert b"Flask CI/CD Demo" in response.data
+    assert "Hello from Flask CI/CD!" in response.text
