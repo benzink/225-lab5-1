@@ -1,0 +1,5 @@
+FROM python:3.10-slim
+WORKDIR /app
+COPY . .
+RUN pip install -r requirements2.txt
+CMD ["pytest", "test_html_elements.py"]
