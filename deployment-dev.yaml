@@ -2,18 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flask-app-dev
+  labels:
+    app: flask
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: flask-app
+      app: flask
   template:
     metadata:
       labels:
-        app: flask-app
+        app: flask
     spec:
       containers:
-      - name: flask-app
-        image: flask-app-build
+      - name: flask-container
+        image: cithit/benzink:latest  # Jenkins will replace this tag dynamically
         ports:
         - containerPort: 5000
