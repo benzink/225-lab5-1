@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: flask-container
-        image: cithit/benzink:latest  # Jenkins will replace this tag dynamically
+        image: cithit/roseaw:latest  # Jenkins will replace this tag dynamically
         ports:
         - containerPort: 5000
