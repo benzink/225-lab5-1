@@ -1,27 +1,148 @@
-body { padding-top: 2rem; font-family: 'Inter', 'Segoe UI', Roboto, sans-serif; }
-.card { border-radius: 0.8rem; border: 1px solid #D7D7D7; }
-
-.btn-primary { background-color: #B00B1E !important; border-color: #B00B1E !important; }
-.btn-primary:hover { background-color: #8E0918 !important; border-color: #8E0918 !important; }
-.btn-outline-secondary { color: #B00B1E !important; border-color: #B00B1E !important; }
-.btn-outline-secondary:hover { background-color: #B00B1E !important; color: #fff !important; }
-
-.table thead th { background: var(--bs-body-bg); border-bottom: 2px solid #B00B1E !important; }
-.table-striped tbody tr:nth-of-type(odd) { background-color: rgba(176, 11, 30, 0.04); }
-[data-bs-theme="dark"] .card { border: 1px solid #333; }
-[data-bs-theme="dark"] .table-striped tbody tr:nth-of-type(odd) { background-color: rgba(176, 11, 30, 0.2); }
-
-/* Miami branding */
-.miami-title {
-  font-family: 'Oswald', sans-serif; font-weight: 600; letter-spacing: 1px;
-  font-size: 1.9rem; line-height: 1.1; color: #B00B1E; text-transform: uppercase;
+:root {
+  --lab-primary: #c41230;
+  --lab-primary-soft: #fde7eb;
+  --lab-dark: #0f172a;
+  --lab-border: #e1e3ea;
+  --lab-muted: #6c757d;
 }
-.miami-subtitle { font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--bs-secondary-color); }
-h1, h2, h3, .h1, .h2, .h3 { font-family: 'Oswald', sans-serif; font-weight: 500; }
+
+.lab-body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: radial-gradient(circle at top left, #fef3f2, #eef2ff);
+}
+
+/* Hero */
+
+.lab-hero {
+  background: radial-gradient(circle at top left, #111827, #020617);
+  color: #f9fafb;
+}
+
+.miami-title {
+  font-family: "Oswald", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.9rem;
+  color: #e5e7eb;
+}
+
+.miami-subtitle {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.lab-pill {
+  font-family: "Oswald", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(248, 250, 252, 0.1);
+  border: 1px solid rgba(248, 250, 252, 0.2);
+  color: #fef2f2;
+}
+
+.lab-pipe-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(248, 250, 252, 0.6);
+}
+
+/* Stat cards */
+
+.lab-stat-card {
+  border-radius: 1rem;
+  padding: 0.9rem 1.1rem;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  color: #e5e7eb;
+  backdrop-filter: blur(10px);
+}
+
+.lab-stat-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9ca3af;
+}
+
+.lab-stat-value {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.lab-stat-caption {
+  font-size: 0.75rem;
+  color: #cbd5f5;
+}
+
+.lab-env-badge {
+  background-color: rgba(248, 250, 252, 0.1);
+  border: 1px solid rgba(248, 250, 252, 0.4);
+  color: #e5e7eb;
+}
+
+/* Main cards */
+
+.lab-main {
+  margin-top: 1.5rem;
+}
+
+.lab-card {
+  border-radius: 1.1rem;
+  border: 1px solid var(--lab-border) !important;
+}
+
+.btn-lab-primary {
+  background-color: var(--lab-primary);
+  border-color: var(--lab-primary);
+}
+
+.btn-lab-primary:hover,
+.btn-lab-primary:focus {
+  background-color: #9b0e25;
+  border-color: #9b0e25;
+}
+
+/* Table */
+
+.contacts-table tbody tr:hover {
+  background-color: #faf5f5;
+}
+
+.contacts-table td.name {
+  font-weight: 500;
+}
+
+.contacts-toolbar input {
+  min-width: 200px;
+}
+
+/* Pipeline list */
+
+.lab-pipeline-list li {
+  margin-bottom: 0.25rem;
+}
 
 /* Pagination */
-.page-link { color: #B00B1E !important; border-color: #D7D7D7 !important; }
-.page-link:hover { background-color: rgba(176, 11, 30, 0.1) !important; border-color: #B00B1E !important; color: #8E0918 !important; }
-.page-item.active .page-link { background-color: #B00B1E !important; border-color: #B00B1E !important; color: #fff !important; }
-[data-bs-theme="dark"] .page-link { color: #FFCDD2 !important; }
-[data-bs-theme="dark"] .page-item.active .page-link { background-color: #B00B1E !important; border-color: #B00B1E !important; color: #fff !important; }
+
+.pagination .page-link {
+  border-radius: 999px !important;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--lab-primary);
+  border-color: var(--lab-primary);
+}
+
+/* Footer */
+
+.lab-footer {
+  background: #ffffffaa;
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--lab-border);
+  font-size: 0.8rem;
+}
