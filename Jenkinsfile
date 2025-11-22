@@ -65,17 +65,16 @@ pipeline {
         // 5. DAST (Dastardly) against DEV
         //    -> dynamic testing of running app
         stage('Run Security Checks (DAST)') {
-            steps {
-                sh 'docker pull public.ecr.aws/portswigger/dastardly:latest'
-                sh '''
-                    docker run --user $(id -u) -v ${WORKSPACE}:${WORKSPACE}:rw \
-                    -e BURP_START_URL=http://10.48.229.157
-                    -e BURP_REPORT_FILE_PATH=${WORKSPACE}/dastardly-report.xml \
-                    public.ecr.aws/portswigger/dastardly:latest
-                '''
-            }
-        }
-
+    steps {
+        sh '''
+            docker pull public.ecr.aws/portswigger/dastardly:latest
+            docker run --user $(id -u) -v ${WORKSPACE}:${WORKSPACE}:rw \
+                -e BURP_START_URL=http://10.48.229.157 \
+                -e BURP_REPORT_FILE_PATH=${WORKSPACE}/dastardly-report.xml \
+                public.ecr.aws/portswigger/dastardly:latest
+        '''
+    }
+}
         // 6. Reset DB after security checks
         //    -> shows you can control persisted data
         stage('Reset DB After Security Checks') {
